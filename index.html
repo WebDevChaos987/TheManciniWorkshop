@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>The Mancini Workshop&trade;</title>
+    
+    <style>
+      body {
+        background-color: #1A1A1A;
+        color: #FFA500;
+        font-family: "Lucida Console", "Courier New", monospace;
+        text-align: center;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 45px;
+        color: rgb(255, 165, 0);
+        /* The glow effect you created */
+        text-shadow: 0 0 5px rgb(255, 165, 0), 0 0 15px rgb(255, 165, 0);
+        margin-bottom: 30px;
+      }
+      input {
+        background: #2a2a2a;
+        border: 1px solid #FFA500;
+        color: white;
+        padding: 10px;
+        width: 300px;
+      }
+      button {
+        background-color: #FFA500;
+        color: #1A1A1A;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: bold;
+        border-radius: 67px;
+      }
+      button:hover {
+        background-color: #FF8C00;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <header>
+      <h1>The Mancini Workshop&trade;</h1>
+    </header>
+    
+    <p style="max-width: 600px; margin: 0 auto 20px auto;">
+      Welcome to The Mancini Workshop. We build websites for free. 
+      Contact us via the form below, and we'll send a link or QR Code when your site is ready!
+    </p>
+    
+    <form id="contactForm">
+      <input id="message" placeholder="Message..."><br><br>
+      <button type="button" onclick="sendMail()">Send</button>  
+      <button type="reset">Clear</button>
+    </form>
+
+    <footer style="margin-top: 50px; font-size: 12px;">
+      &copy; 2026 The Mancini Workshop&trade; | All Rights Reserved
+    </footer>
+
+    <script>
+      function sendMail() {
+        const msg = document.getElementById("message").value;
+        // This opens the user's mail app on Mac
+        window.location.href = "mailto:karissaking94@gmail.com?subject=Workshop Inquiry&body=" + encodeURIComponent(msg);
+      }
+    </script>
+  </body>
+</html>
