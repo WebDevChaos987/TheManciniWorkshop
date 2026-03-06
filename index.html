@@ -38,6 +38,29 @@
       button:hover {
         background-color: #FF8C00;
       }
+     html, body {
+       height: 100%; /* Important: Tell the browser the page is full height */
+       margin: 0;
+     }
+     body {
+       background-color: #1A1A1A;
+       color: #FFA500;
+       font-family: "Lucida Console", "Courier New", monospace;
+       text-align: center;
+       padding: 20px;
+       
+       display: flex;
+       flex-direction: column;
+       min-height: 100vh; /* Takes up 100% of the viewport height */
+       }
+       form {
+         flex: 1; /* This tells the middle section to grow and push the footer down */
+       }
+       footer {
+         padding: 20px 0;
+         border-top: 1px solid #333;
+       }
+
     </style>
   </head>
   
@@ -50,7 +73,7 @@
       Welcome to The Mancini Workshop. We build websites for free. 
       Contact us via the form below, and we'll send a link or QR Code when your site is ready!
     </p>
-    
+
         <form id="contactForm">
       <input id="userEmail" type="email" placeholder="Your Email Address" required><br><br>
       <textarea id="message" placeholder="Describe your website project..." rows="4" style="width: 320px; background: #2a2a2a; border: 1px solid #FFA500; color: white; padding: 10px; font-family: inherit;"></textarea><br><br>
@@ -58,7 +81,7 @@
       <button type="button" onclick="sendMail()">Send Request</button>  
       <button type="reset">Clear</button>
     </form>
-
+    
     <footer>
       &copy; 2026 The Mancini Workshop&trade; | All Rights Reserved
     </footer>
@@ -80,4 +103,5 @@
         window.location.href = "mailto:karissaking94@gmail.com?subject=" + subject + "&body=" + body;
       }
     </script>
+
 
