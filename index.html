@@ -50,23 +50,34 @@
       Welcome to The Mancini Workshop. We build websites for free. 
       Contact us via the form below, and we'll send a link or QR Code when your site is ready!
     </p>
-    
-    <form id="contactForm">
-      <input id="message" placeholder="Message..."><br><br>
-      <button type="button" onclick="sendMail()">Send</button>  
-      <button type="reset">Clear</button>
-    </form>
 
-    <footer style="margin-top: 50px; font-size: 12px;">
+    <footer>
       &copy; 2026 The Mancini Workshop&trade; | All Rights Reserved
     </footer>
 
+        <form id="contactForm">
+      <input id="userEmail" type="email" placeholder="Your Email Address" required><br><br>
+      <textarea id="message" placeholder="Describe your website project..." rows="4" style="width: 320px; background: #2a2a2a; border: 1px solid #FFA500; color: white; padding: 10px; font-family: inherit;"></textarea><br><br>
+      
+      <button type="button" onclick="sendMail()">Send Request</button>  
+      <button type="reset">Clear</button>
+    </form>
+
     <script>
       function sendMail() {
+        const email = document.getElementById("userEmail").value;
         const msg = document.getElementById("message").value;
-        // This opens the user's mail app on Mac
-        window.location.href = "mailto:karissaking94@gmail.com?subject=Workshop Inquiry&body=" + encodeURIComponent(msg);
+        
+        if(!email || !msg) {
+          alert("Please fill out both your email and the project details!");
+          return;
+        }
+
+        // This compiles the info and opens the Mac Mail app
+        const subject = encodeURIComponent("New Website Project - Mancini Workshop");
+        const body = encodeURIComponent("Client Email: " + email + "\n\nProject Details:\n" + msg);
+        
+        window.location.href = "mailto:karissaking94@gmail.com?subject=" + subject + "&body=" + body;
       }
     </script>
-  </body>
-</html>
+
